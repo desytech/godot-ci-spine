@@ -49,7 +49,6 @@ RUN wget https://spine-godot.s3.eu-central-1.amazonaws.com/${SUBDIR}/${GODOT_VER
     && unzip ${SPINE_GODOT_TEMPLATES_FILE} -d ~/.local/share/godot/export_templates/${GODOT_VERSION}.${RELEASE_NAME} \
     && rm -f ${SPINE_GODOT_TEMPLATES_FILE} ${SPINE_GODOT_EDITOR_FILE}
 
-RUN whoami
 RUN godot -v -e --quit --headless ${GODOT_TEST_ARGS}
 # Godot editor settings are stored per minor version since 4.3.
 # `${GODOT_VERSION:0:3}` transforms a string of the form `x.y.z` into `x.y`, even if it's already `x.y` (until Godot 4.9).
